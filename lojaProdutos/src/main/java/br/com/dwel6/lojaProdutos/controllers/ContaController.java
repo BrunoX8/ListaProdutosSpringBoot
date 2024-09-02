@@ -30,6 +30,7 @@ public class ContaController {
         RegisterDTO registerDTO = new RegisterDTO();
         model.addAttribute(registerDTO);
         model.addAttribute("success", false);
+        System.out.println("Passei no GET");
         return "cadastroUser";
     }
 
@@ -45,6 +46,7 @@ public class ContaController {
         {
             return "cadastroUser";
         }
+
 
         try {
             //cria nova conta

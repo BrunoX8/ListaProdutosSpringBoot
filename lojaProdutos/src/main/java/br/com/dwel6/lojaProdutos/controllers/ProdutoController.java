@@ -101,12 +101,13 @@ public class ProdutoController {
                 return "produtos/editarProduto";
             }
 
-            produto.setNome(produto.getNome());
+            produto.setNome(produtoDTO.getNome());
             produto.setMarca(produtoDTO.getMarca());
-            produto.setCategoria(produto.getCategoria());
-            produto.setPreco(produto.getPreco());
-            produto.setDescricao(produto.getDescricao());
+            produto.setCategoria(produtoDTO.getCategoria());
+            produto.setPreco(produtoDTO.getPreco());
+            produto.setDescricao(produtoDTO.getDescricao());
             produtoRepository.save(produto);
+            System.out.println("Passei no update!");
 
         } catch (Exception ex) {
             System.out.println("Exception:" + ex.getMessage());

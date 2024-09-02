@@ -13,12 +13,12 @@ public class SecurityConfig {
     //Para mostrar o funcionamento do sistema de cadastros de produtos
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable());
-        return http.build();
+        //http.csrf(csrf -> csrf.disable());
+        //return http.build();
 
         //PARA MOSTRAR O FUNCIONAMENTO DO SISTEMA DE LOGIN
 
-       /*return http.authorizeHttpRequests(auth -> auth.requestMatchers("/").permitAll().requestMatchers("/contato").permitAll()
+       return http.authorizeHttpRequests(auth -> auth.requestMatchers("/").permitAll().requestMatchers("/contato").permitAll()
        .requestMatchers("/produtos").permitAll()
        .requestMatchers("/criarProduto").permitAll()
        .requestMatchers("/editarProduto").permitAll()
@@ -29,7 +29,7 @@ public class SecurityConfig {
 
        .formLogin(form -> form.defaultSuccessUrl("/", true))
        .logout(config -> config.logoutSuccessUrl("/")).build();
-       */
+       
     } 
 
     @Bean
